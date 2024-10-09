@@ -27,7 +27,7 @@
 
 1.Склонируйте репозиторий:
    ```bash
-   git clone https://github.com/Krd2024/_ecommerce_.git.git
+   git clone https://github.com/Krd2024/_ecommerce_.git
 ```
 2.Создание виртуального окружения
 ```bash
