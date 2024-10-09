@@ -24,9 +24,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
         <a href="{% url 'index' %}">Главная</a>
-        <a href="#">О Нас</a>
+        {% comment %} <a href="#">О Нас</a>
         <a href="#">Услуги</a>
-        <a href="#">Контакты</a>
+        <a href="#">Контакты</a> {% endcomment %}
         {% if request.user.is_authenticated %}
           <a href="{% url 'order' %}">Мои покупки</a>
           <a href="{% url 'logoutPage' %}">Выход</a>
