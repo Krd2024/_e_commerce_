@@ -1,3 +1,4 @@
+[![Lint](https://github.com/Krd2024/_ecommerce_/actions/workflows/lint.yml/badge.svg)](https://github.com/Krd2024/_ecommerce_/actions/workflows/lint.yml)
 ![Python Versions](https://img.shields.io/pypi/pyversions/Django.svg)
 # Интернет-магазин (Pet-проект)
 ## Описание
