@@ -1,5 +1,5 @@
-from rest_framework import serializers
 from .models import Order, OrderItem, Product
+from rest_framework import serializers
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -8,26 +8,12 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = ["id", "name", "price", "description", "stock_quantity", "category"]
 
-    # age = serializers.IntegerField(min_value=16, max_value=99)
-    # job = serializers.CharField(required=False, default="Безработный(ая)")
-
 
 class ProductUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
         fields = ["id", "price", "description", "stock_quantity"]
-
-
-# class OrderItemSerializer(serializers.ModelSerializer):
-#     """Все заказы"""
-
-#     class Meta:
-#         model = OrderItem
-#         fields = ["id", "product", "order", "quantity", "price", "total_price"]
-
-
-# serializers.py
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -42,6 +28,8 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
 
 class OrderCreateSerializer(serializers.ModelSerializer):
+    """Создать заказ"""
+
     order_items = OrderItemSerializer(many=True)
 
     class Meta:

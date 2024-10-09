@@ -16,7 +16,7 @@ from .serializers import OrderCreateSerializer
 
 class ProductListCreateView(APIView):
     """
-    Получить список товаров
+    Получить список товаров,
     Создать новый продукт
     """
 
@@ -62,8 +62,9 @@ class ProductListCreateView(APIView):
 
 class ProductDetailUpdate(APIView):
     """
-    Информации о товаре
-    Обновление продукта
+    Информации,
+    обновление,
+    удаление товара
     """
 
     @extend_schema(
@@ -170,45 +171,3 @@ class OrderDetailView(generics.RetrieveAPIView):
 
 
 # ----------------------------------------------------------------
-
-# class OrderItems(APIView):
-#     """Посмотреть все заказы"""
-
-#     @extend_schema(
-#         summary="Посмотреть все заказы",
-#         description="Посмотреть все заказы",
-#         responses={
-#             200: OpenApiResponse(
-#                 response=OrderItemSerializer, description="Все заказы"
-#             ),
-#             404: OpenApiResponse(description="Заказы не найдены"),
-#         },
-#     )
-#     def get(self, request):
-#         try:
-#             orderItem = OrderItem.objects.all()
-#         except OrderItem.DoesNotExist:
-#             return Response(
-#                 {"error": "Product not found"}, status=status.HTTP_404_NOT_FOUND
-#             )
-#         serializer = OrderItemSerializer(orderItem, many=True)
-#         return Response(serializer.data)
-
-
-# ==================================================================================
-
-
-# class UserDelete(APIView):
-
-
-# class UserDeleteAll(APIView):
-#     @extend_schema(
-#         summary="Удаление всех пользователей",
-#         description="Удаляет всех пользователей из базы данных.",
-#         responses={
-#             200: OpenApiResponse(description="Все пользователи успешно удалены")
-#         },
-#     )
-#     def delete(self, request):
-#         User.objects.all().delete()
-#         return Response({"status": "All users deleted"}, status=status.HTTP_200_OK)
