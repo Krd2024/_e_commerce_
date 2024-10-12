@@ -112,6 +112,7 @@ class ProductDetailUpdate(APIView):
 
         if serializer.is_valid():
             product = serializer.save()
+
             return Response(
                 {"status": "Product updated", "id": product.id},
                 status=status.HTTP_200_OK,
@@ -131,8 +132,8 @@ class ProductDetailUpdate(APIView):
     def delete(self, request, product_id):
         if product_id:
             try:
-                user = Product.objects.get(id=product_id)
-                user.delete()
+                product = Product.objects.get(id=product_id)
+                product.delete()
                 return Response(
                     {"status": "Product deleted"}, status=status.HTTP_200_OK
                 )
