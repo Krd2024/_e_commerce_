@@ -31,8 +31,8 @@ class ProductListCreateView(APIView):
         },
     )
     def get(self, request):
-        users = Product.objects.all()
-        serializer = ProductSerializer(users, many=True)
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
     @extend_schema(
@@ -62,7 +62,8 @@ class ProductListCreateView(APIView):
 
 class ProductDetailUpdate(APIView):
     """
-    Информации,
+    Получение
+    информациио товаре,
     обновление,
     удаление товара
     """
